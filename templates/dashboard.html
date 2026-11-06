@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Dashboard</h1>
+    <p>Welcome, <strong>{{ user.username }}</strong>!</p>
+    <p style="color: #666; font-size: 14px;">Current time: <strong>{{ current_time.strftime('%Y-%m-%d %H:%M:%S') }}</strong></p>
+    <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+
+    <div style="margin-top: 20px;">
+        <h2>Your Account</h2>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Role:</strong>
+            {% if user.is_admin() %}
+                <span class="badge badge-admin">Admin</span>
+            {% else %}
+                <span class="badge badge-user">User</span>
+            {% endif %}
+        </p>
+        <p><strong>Member Since:</strong> {{ user.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+        {% if user.last_login %}
+            <p><strong>Last Login:</strong> {{ user.last_login.strftime('%Y-%m-%d %H:%M') }}</p>
+        {% endif %}
+    </div>
+
+    <div style="margin-top: 30px; text-align: center;">
+        <a href="{{ url_for('logout') }}" style="background: #e74c3c; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">Logout</a>
+    </div>
+</div>
+{% endblock %}

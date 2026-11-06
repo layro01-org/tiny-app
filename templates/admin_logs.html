@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Event Logs{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Event Logs</h1>
+
+    {% if logs %}
+        <p style="color: #7f8c8d; margin-bottom: 20px;">Total events: {{ logs|length }}</p>
+        {% for log in logs %}
+            <div class="log-entry">{{ log.strip() }}</div>
+        {% endfor %}
+    {% else %}
+        <p style="color: #7f8c8d;">No events logged yet.</p>
+    {% endif %}
+
+    <div style="margin-top: 20px; text-align: center;">
+        <a href="{{ url_for('admin') }}" style="background: #95a5a6; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">Back to Admin Panel</a>
+    </div>
+</div>
+{% endblock %}

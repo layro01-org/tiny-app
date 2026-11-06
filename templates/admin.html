@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Admin Panel</h1>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">{{ total_users }}</div>
+            <div class="stat-label">Total Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ admin_count }}</div>
+            <div class="stat-label">Admins</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ user_count }}</div>
+            <div class="stat-label">Regular Users</div>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 40px;">Management</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px;">
+        <a href="{{ url_for('admin_users') }}" style="background: #3498db; color: white; padding: 15px; border-radius: 4px; text-align: center; text-decoration: none; font-weight: 600;">
+            Manage Users
+        </a>
+        <a href="{{ url_for('admin_logs') }}" style="background: #27ae60; color: white; padding: 15px; border-radius: 4px; text-align: center; text-decoration: none; font-weight: 600;">
+            View Event Logs
+        </a>
+    </div>
+</div>
+{% endblock %}

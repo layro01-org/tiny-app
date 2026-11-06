@@ -1,0 +1,44 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables (don't commit secrets!)
+.env
+.env.local
+
+# Database
+instance/
+*.db
+*.sqlite
+
+# Logs
+logs/
+*.log
+
+# SSL/TLS Certificates and Keys
+*.pem
+*.key
+*.crt
+*.cert
+*.pfx
+*.p12
+
+# OS-specific
+.DS_Store
+Thumbs.db
