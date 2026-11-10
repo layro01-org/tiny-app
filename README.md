@@ -57,10 +57,10 @@ Then open:
 .
 ├── app.py                 # Flask application & routes
 ├── requirements.txt       # Python dependencies
-├── .env                   # Environment configuration
-├── cert.pem              # Self-signed SSL certificate
-├── key.pem               # SSL private key
-├── templates/            # Jinja2 HTML templates
+├── .env                   # Environment configuration *** Not currently in repo
+├── cert.pem               # *** Not currently in repo
+├── key.pem                # *** Not currently in repo
+├── templates/             # Jinja2 HTML templates
 │   ├── base.html
 │   ├── login.html
 │   ├── register.html
@@ -69,7 +69,7 @@ Then open:
 │   ├── admin_users.html
 │   └── admin_logs.html
 └── logs/                 # Event log directory
-    └── events.log
+    └── events.log        # *** Not currently in repo
 ```
 
 ## Configuration
