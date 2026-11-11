@@ -179,6 +179,15 @@ def login():
 
     return render_template('login.html')
 
+@app.route('/health')
+def health_check():
+    try:
+        db.session.execute(db.text('SELECT 1'))
+        return {"status": "healthy", "database": "connected"}, 200
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        return {"status": "unhealthy", "database": "disconnected"}, 500
+
 
 @app.route('/dashboard')
 @login_required
