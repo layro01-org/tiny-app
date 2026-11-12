@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 400px; margin: 100px auto;">
+    <h1>About Me</h1>
+    <p>This is a production application designed to manage users, sessions, and roles. It provides a secure and efficient way to handle user authentication and authorization. Forums are slowly being integrated into the application along with various other integrations.</p>
+</div>
+{% endblock %}
+
+    <div class="text-center">
+        Don't have an account? <a href="{{ url_for('register') }}">Register here</a>
+    </div>
+</div>
+{% endblock %}
